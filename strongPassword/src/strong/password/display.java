@@ -9,11 +9,11 @@ public class display {
 	    	
 	    StrongPassword one = new StrongPassword();	
 	    
-	    System.out.println(one.retorna());
+	 
 	    System.out.println(one.returnPassword());
 	    
 	    
-	    System.out.println(one.sizeListPass);
+	 
 	    
 	      }
 	    }

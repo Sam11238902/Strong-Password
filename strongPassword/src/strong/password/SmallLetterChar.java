@@ -1,8 +1,9 @@
 package strong.password;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
+
 
 public class SmallLetterChar extends HookCharacters{
 
@@ -10,8 +11,8 @@ public class SmallLetterChar extends HookCharacters{
 			'j','k','l','m','n','o','p','q','r','s','t','u','v','w','x'
 			,'y','z'));
 	
-	@Override
-	public char getChar() {
+	
+	/*public char getChar() {
 		Random ran = new Random();
 		
 		int position = ran.nextInt(smallLetterOptions.size());
@@ -19,6 +20,14 @@ public class SmallLetterChar extends HookCharacters{
 		char character = smallLetterOptions.get(position);
 		
 		return character;
+	}*/
+
+	
+	public List<Character> getList() {
+		
+		return this.smallLetterOptions;
 	}
+
+	
 
 }

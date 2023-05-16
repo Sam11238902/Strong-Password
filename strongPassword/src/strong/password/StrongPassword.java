@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class StrongPassword {
 	
-	private List<Character> password = new ArrayList();
+	private ArrayList<Character> password = new ArrayList();
 	int sizeListPass;
 	
 	public StrongPassword() {

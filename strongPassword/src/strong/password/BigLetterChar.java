@@ -2,7 +2,7 @@ package strong.password;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
+
 
 public class BigLetterChar  extends HookCharacters {
 
@@ -11,13 +11,23 @@ public class BigLetterChar  extends HookCharacters {
 			,'Y','Z'));
 	
 	
-	public char getChar() {
+	/*public char getChar() {
 		Random ran = new Random();
 		int position = ran.nextInt(bigLetterCharacter.size());
 		
 		char character = bigLetterCharacter.get(position);
 		
 		return character;
+	}*/
+
+
+	
+	public List<Character> getList() {
+		
+		return this.bigLetterCharacter;
 	}
+
+
+	
 
 }

@@ -3,10 +3,5 @@ Gerador de senhas de 12 a 15 caracteres em java . A senha sempre conterá pelo m
 
 Conceitos OO utilizados :
 
-Interface
-Herança 
-Poliformismo 
-Sobrecarga
-StringBuilder
-Interface COllection 
+Interface, Herança , Poliformismo , Sobrecarga ,StringBuilder , Interface COllection .
 

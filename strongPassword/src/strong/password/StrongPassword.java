@@ -6,12 +6,16 @@ import java.util.Random;
 
 public class StrongPassword {
 	
-	private ArrayList<Character> password = new ArrayList();
+	
+	private HookCharacters [] hook = {new SmallLetterChar(), new NumberGenerateChar(), new BigLetterChar(),
+			new LetterCharacter()};
+	
+	private List<Character> password = new ArrayList();
 	int sizeListPass;
 	
 	public StrongPassword() {
 		randomSize();
-		createPassword();
+	
 	}
 	
 	
@@ -23,47 +27,60 @@ public class StrongPassword {
    		
 	}
 	
-	public void createPassword(){
+	public String createPassword(){
 		
-		HookCharacters smallLetter = new SmallLetterChar();
-    	HookCharacters bigLetter = new BigLetterChar();
-    	HookCharacters characterLetter = new LetterCharacter();
-    	HookCharacters numberLetter = new NumberGenerateChar();
-    	
-    	this.password.add(smallLetter.getChar());
-    	this.password.add(bigLetter.getChar());
-    	this.password.add(characterLetter.getChar());
-    	this.password.add(numberLetter.getChar());
- 
-    	for( int x = password.size(); x < this.sizeListPass  ; x++) {
-    		
-    		Random ran = new Random();
-    		
-    		int draw = ran.nextInt(4)+1;
-    		switch (draw) {
-    	    case 1 :
-    	        this.password.add(smallLetter.getChar());
-    	        break;
-    	    case 2:
-    	        this.password.add(bigLetter.getChar());
-    	        break;
-    	    case 3:
-    	        this.password.add(characterLetter.getChar());
-    	        break;
-    	    case 4:
-    	      this.password.add(numberLetter.getChar());
-    	        break;
-    	    
-    	}
-    	}
-    	
-    	Collections.shuffle(this.password);	
-	}
 	
-	public List<Character> retorna(){
-		return password;
-	}
 	
+		for(int x = 0; x < 3; x++) {
+	    	this.password.add(hook[x].getChar());
+		}
+		
+		for(int x = 3 ;x < this.sizeListPass; x++) {
+    			Random ran = new Random();
+        		int draw = ran.nextInt(4);
+        		this.password.add(hook[draw].getChar());
+    			
+    		}
+	
+    	
+      	Collections.shuffle(this.password);	
+    	  	StringBuilder builder = new StringBuilder();
+    		for (char chars : password) {
+    		builder.append(chars);
+    		}
+    	
+    		return builder.toString();
+    	
+   	}
+	
+	// abaixo o codigo antigo que foi refatorado 
+	
+	
+	
+	/*HookCharacters smallLetter = new SmallLetterChar();
+	HookCharacters bigLetter = new BigLetterChar();
+	HookCharacters characterLetter = new LetterCharacter();
+	HookCharacters numberLetter = new NumberGenerateChar();
+	
+	
+	
+	for( int x = password.size(); x < this.sizeListPass  ; x++) {
+	
+	/*switch (draw) {
+    case 1 :
+        this.password.add(smallLetter.getChar());
+        break;
+    case 2:
+        this.password.add(bigLetter.getChar());
+        break;
+    case 3:
+        this.password.add(characterLetter.getChar());
+        break;
+    case 4:
+      this.password.add(numberLetter.getChar());
+        break;  	    
+}
+}
 	public String returnPassword(){
 		String Password = new String();
 		for(int x = 0; x < this.password.size(); x++) {
@@ -71,5 +88,5 @@ public class StrongPassword {
 			Password = Password + travelingList ;
 		}	
 		return Password;
-	}
+	}*/
 }
